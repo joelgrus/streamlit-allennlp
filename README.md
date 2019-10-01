@@ -9,7 +9,10 @@ trained on the [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) dataset.
 ![image of demo](screenshot.png)
 
 ## How to run this demo
+
 ```
 pip install -r requirements.txt
 streamlit run app.py
 ```
+
+Go to http://localhost:8501, and try your own examples.
