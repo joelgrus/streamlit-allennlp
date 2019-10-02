@@ -7,7 +7,11 @@ st.header("AllenNLP Demo")
 
 # Load the pretrained BiDAF model for question answering.
 # (It's big, don't do this over dial-up.)
-predictor = pretrained.bidirectional_attention_flow_seo_2017()
+# Use st.cache so that it doesn't reload when you change the inputs.
+predictor = st.cache(
+       pretrained.bidirectional_attention_flow_seo_2017,
+       ignore_hash=True  # the Predictor is not hashable
+)()
 
 # Create a text area to input the passage.
 passage = st.text_area("passage", "The Matrix is a 1999 movie starring Keanu Reeves.")
